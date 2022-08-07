@@ -1,0 +1,11 @@
+.gamecontainer{
+    height: calc(100vh - 50px)
+}
+
+.featuredContainer::-webkit-scrollbar{
+    display: none;
+}
+
+.choiceContainer::-webkit-scrollbar{
+    display: none
+}

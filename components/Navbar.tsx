@@ -1,73 +1,54 @@
-import styles from "../styles/navbar.module.css";
-import Image from "next/image";
-import {
-  BellIcon,
-  ChatIcon,
-  ChevronDownIcon,
-  HomeIcon,
-  UserGroupIcon,
-  ViewGridIcon,
-} from "@heroicons/react/solid";
-import {
-  FlagIcon,
-  PlayIcon,
-  SearchIcon,
-  ShoppingCartIcon,
-} from "@heroicons/react/outline";
-import { signOut } from "next-auth/react";
+import { SearchIcon } from "@heroicons/react/outline";
+import { BellIcon } from "@heroicons/react/Solid";
 
+function Navbar() {
 
-function Navbar({session}) {
+  
+  
+
   return (
-    <div className={styles.navBar}>
-      <div className={styles.navBarLeft}>
-        <h1>PN</h1>
-        <div className={styles.inputDiv}>
-          <SearchIcon className={styles.searchIcon} />
+    <div className={`w-full h-[50px] flex flex-row`}>
+      <div className={`w-1/2 h-full flex justify-start items-center pl-2`}>
+        <div
+          className={`w-3/4 h-4/6 border-[0.5px] border-[#ffffff7f] rounded-md flex flex-row justify-start items-center px-2`}
+        >
+          <SearchIcon
+            className={`stroke-[#ffffff3f] w-6 cursor-pointer mr-2`}
+          />
           <input
+            className={`w-11/12 h-full bg-inherit border-0 outline-0 pl-2 text-white`}
             type="text"
-            className={styles.inputField}
-            placeholder="Search Purple"
           />
         </div>
       </div>
-      <div className={styles.navBarCenter}>
-        <div>
-          <HomeIcon className={styles.navBarCenterIcons} />
-        </div>
-        <div>
-          <FlagIcon className={styles.navBarCenterIcons} />
-        </div>
-
-        <div>
-          <PlayIcon className={styles.navBarCenterIcons} />
-        </div>
-
-        <div>
-          <ShoppingCartIcon className={styles.navBarCenterIcons} />
-        </div>
-
-        <div>
-          <UserGroupIcon className={styles.navBarCenterIcons} />
-        </div>
-      </div>
-      <div className={styles.navBarRight}>
-        <p className={styles.username}>{session.user.name}</p>
-        {/* <div className={styles.rightNav}>
-          <div>
-            <ViewGridIcon className={styles.navBarRightIcons} />
+      <div
+        className={`w-1/2 h-full flex justify-start items-center flex flex-row justify-end items-center`}
+      >
+        <div
+          className={`w-8 h-8 relative cursor-pointer mr-3 flex items-center justify-center`}
+        >
+          <BellIcon className={`stroke-white w-7 fill-[#ffffff] `} />
+          <div
+            className={`bg-[#cc5c5c] top-[1px] right-[1px] flex items-center justify-center h-[15px] w-[15px]  rounded-full text-white absolute`}
+          >
+            <span className={`text-[11px] text-bold`}>20</span>
           </div>
-          <div>
-            <ChatIcon className={styles.navBarRightIcons} />
+        </div>
+        <div
+          className={`w-[250px] h-full flex flex-row justify-end items-center`}
+        >
+          <img
+            src="/images/dp.jpg"
+            alt=""
+            className={`w-[30px] h-[30px] rounded-full mx-2 border-2 border-[#ffff00]`}
+          />
+          <div
+            className={`w-[200px] h-full flex flex-col items-start justify-center`}
+          >
+            <h1 className={`text-sm text-white font-bold`}> Bashorun Dolapo</h1>
+            <h2 className={`text-xs text-white`}>bashorun115@gmail.com</h2>
           </div>
-          <div>
-            <BellIcon className={styles.navBarRightIcons} />
-          </div>
-          <div>
-            <ChevronDownIcon className={styles.navBarRightIcons} />
-          </div>
-        </div> */}
-        <img src = {session.user.image} alt  = '' className = {styles.profileImg} onClick= {()=>{signOut()}}/>
+        </div>
       </div>
     </div>
   );

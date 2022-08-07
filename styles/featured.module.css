@@ -1,0 +1,5 @@
+.featured{
+    filter: grayscale(20%);
+    box-shadow: -1px -1px 20px black;
+    /* color: #ff4500; */
+}
