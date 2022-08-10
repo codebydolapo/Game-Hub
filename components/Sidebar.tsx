@@ -13,11 +13,15 @@ import styles from "../styles/sidebar.module.css";
 
 function Sidebar() {
   return (
-    <div className={`h-full w-1/5 flex flex-col ${styles.sidebar}`}>
+    <div
+      className={`h-full w-1/5 md:flex flex-col ${styles.sidebar}  md:visible xsm:invisible xsm:hidden`}
+    >
       <div
         className={`h-[10%] w-full flex justify-start items-center border-0 border-b-2 border-white `}
       >
-        <h1 className={`text-white font-extrabold text-2xl`}>GAME HUB</h1>
+        <h1 className={`text-white font-extrabold text-2xl`}>
+          GAME<b className={`text-[#ff4500]`}>HUB</b>
+        </h1>
       </div>
       <div className={`h-[90%]`}>
         <div

@@ -2,11 +2,12 @@ import styles from "../styles/gamecontainer.module.css";
 import Featured from "./Featured";
 import featuredData from "../data/featuredData";
 import popularData from "../data/popularData";
-import Popular from './Popular'
+import Popular from "./Popular";
+import Latest from "./Latest";
 
 interface Props {
-  image: string ;
-  title: string ;
+  image: string;
+  title: string;
   description: string;
   rating?: any;
 }
@@ -29,9 +30,9 @@ function GameContainer() {
         })}
       </div>
       <div
-        className={`w-full min-h-1/2 h-auto flex flex-row`}
+        className={`w-full min-h-1/2 h-auto flex justify-center items-start md:flex-row xsm:flex-col`}
       >
-        <div className={`w-4/6 h-full `}>
+        <div className={`md:w-[65%] h-full xsm:w-[100%]`}>
           <div
             className={`w-full h-[4em] flex flex-col justify-around items-start`}
           >
@@ -81,22 +82,53 @@ function GameContainer() {
               </h1>
             </div>
             <div
-              className={`w-full min-h-[20em] h-auto flex flex-wrap items-start justify-around`}
+              className={`w-full min-h-[20em] h-auto flex md:flex-wrap items-start md:flex-row md:justify-around xsm:flex-col`}
             >
-              {popularData.map(({title, description, image, rating}: Props)=>{
-                return <Popular
-                  title = {title}
-                  description = {description}
-                  image = {image}
-                  rating = {rating}
-                  key = {title}
-                />
-              })}
-                
+              {popularData.map(
+                ({ title, description, image, rating }: Props) => {
+                  return (
+                    <Popular
+                      title={title}
+                      description={description}
+                      image={image}
+                      rating={rating}
+                      key={title}
+                    />
+                  );
+                }
+              )}
             </div>
           </div>
         </div>
-        <div className={`w-2/6 h-full border-2 border-grey`}></div>
+        <div
+          className={`md:w-[35%] min-h-1/2 h-auto flex flex-col xsm:w-[100%] items-start justify-center`}
+        >
+          <div
+            className={`w-full h-10 flex flex-row items-center justify-between px-2`}
+          >
+            <h1
+              className={`text-white text-lg font-light tracking-wider bg-[#0000005f]`}
+            >
+              Latest Games
+            </h1>
+            <h3 className={`text-xs font-bold text-xs text-[#ff4500]`}>
+              see all
+            </h3>
+          </div>
+          <div className={`w-full min-h-1/2 h-auto flex flex-col items-center`}>
+            {popularData.map(({ title, description, image, rating }: Props) => {
+              return (
+                <Latest
+                  title={title}
+                  description={description}
+                  image={image}
+                  rating={rating}
+                  key={title}
+                />
+              );
+            })}
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -8,9 +8,9 @@ function Navbar() {
 
   return (
     <div className={`w-full h-[50px] flex flex-row`}>
-      <div className={`w-1/2 h-full flex justify-start items-center pl-2`}>
+      <div className={`md:w-1/2 h-full flex justify-start items-center pl-2 xsm:w-[70%]`}>
         <div
-          className={`w-3/4 h-4/6 border-[0.5px] border-[#ffffff7f] rounded-md flex flex-row justify-start items-center px-2`}
+          className={`md:w-3/4 h-4/6 border-[0.5px] border-[#ffffff7f] rounded-md flex flex-row justify-start items-center px-2 xsm:w-full`}
         >
           <SearchIcon
             className={`stroke-[#ffffff3f] w-6 cursor-pointer mr-2`}
@@ -22,10 +22,10 @@ function Navbar() {
         </div>
       </div>
       <div
-        className={`w-1/2 h-full flex justify-start items-center flex flex-row justify-end items-center`}
+        className={`md:w-1/2 h-full flex justify-start items-center flex flex-row justify-end items-center xsm:w-[30%]`}
       >
         <div
-          className={`w-8 h-8 relative cursor-pointer mr-3 flex items-center justify-center`}
+          className={`w-8 h-8 relative cursor-pointer mr-3 flex items-center justify-center md:block md:visible xsm:invisible xsm:hidden`}
         >
           <BellIcon className={`stroke-white w-7 fill-[#ffffff] `} />
           <div
@@ -40,10 +40,10 @@ function Navbar() {
           <img
             src="/images/dp.jpg"
             alt=""
-            className={`w-[30px] h-[30px] rounded-full mx-2 border-2 border-[#ffff00]`}
+            className={`md:w-[30px] md:h-[30px] rounded-full mx-2 border-2 border-[#ffff00] xsm:w-[40px] xsm:h-[40px]`}
           />
           <div
-            className={`w-[200px] h-full flex flex-col items-start justify-center`}
+            className={`w-[200px] h-full md:flex flex-col items-start justify-center md:visible xsm:invisible xsm:hidden`}
           >
             <h1 className={`text-sm text-white font-bold`}> Bashorun Dolapo</h1>
             <h2 className={`text-xs text-white`}>bashorun115@gmail.com</h2>
